@@ -1,0 +1,180 @@
+ * { /* First step */
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/*
+Media Query Manager
+0 - 600px: Phone
+600 - 900px: Tablet Portrait
+900 - 1200px: Tablet Landscape
+[1200 - 1800] is where our normal styles apply
+1800px + : Big Desktop
+*/
+html {
+    font-size: 62.5%;/* Here we assume that 10px = 1rem so when you divide by 16 which is the actual and multiply by 100, you 62.5% as the absolute value - First step*/
+    }
+
+ @media only screen and (max-width: 75em) { /*1200px/16px */               /* First step */
+    html {
+      font-size: 56.25%; } /* 56.25%/100% * 16 = 9px */
+    }
+
+  @media only screen and (max-width: 56.25em) {/* 900px/16px */              /* First step */
+    html {
+      font-size: 50%; } /* 50%/100% * 16 = 8px */
+    }
+
+/* @media only screen and (max-width: 37.5em) {/* 600px/16px 
+    html {
+      font-size: 43.75%; } /* 56.25%/100% * 16 = 7px 
+    }*/
+
+
+  @media only screen and (min-width: 112.5em) {/* 1800px/16px */             /* First step */
+    html {
+      font-size: 75%; } /* 75%/100% * 16 = 12px */
+    }
+
+
+body {/* First step */
+    font-family: cursive;
+}
+
+nav {/* First step */
+    background-image: linear-gradient(to right, #ffb900, #ff7730);
+    height: 8rem;
+    width: 100%;
+   
+}
+
+label.nav__logo {/* First step */
+    color: #fff;
+    font-size: 3.5rem;
+    line-height: 8rem;
+    padding: 0 0 2rem 10rem;
+    font-weight: bold;
+    
+}
+nav ul {/* First step */
+    float: right;
+    margin-right: 0.5rem;
+}
+nav ul li {/* First step */
+    display: inline-block;
+    line-height: 8rem;
+    margin: 0 0.3rem;
+    
+}
+
+nav ul li a {/* First step */
+    color: #fff;
+    font-size: 1.7rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+
+
+a.active, a:hover {/* First step */
+    color: #ffb900;
+    background: #fff;
+    transition: .5s;
+}
+
+#check__box {/* First step */
+    display: none;
+    float: left;
+  
+    
+    
+}
+
+.check__btn {/* First step */
+    font-size: 3rem;
+    color: #fff;
+    float: right;
+    line-height: 8rem;
+     margin-right: 2rem;
+    cursor: pointer;/* seccond step */
+    display: none;/* second step */
+    
+}
+
+}
+/*  MEDIA QUERY  */
+
+
+@media only screen and (min-width: 75em) {/* 3rd step */
+    label.nav__logo {
+    font-size: 5rem;
+    padding-left: 2rem;
+    }
+    
+    nav ul li a {
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 56.25em) {/* 3rd step */
+    label.nav__logo {
+    font-size: 3rem;
+    padding-left: 4rem;
+    }
+    
+    nav ul li a {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 37.5em) {/* 3rd step */
+    .check__btn {
+    display: block;
+    
+    }
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(to left, #ff7730, #ffb900);
+        top: 8rem;
+        left: -100%;/* was 0 before media query later changed to -100% after media query*/
+        text-align: center;
+        transition: all .9s;/* later changed to -100% after media query*/
+        
+    }
+    
+    nav ul li {
+        display: block;
+        margin: 5rem 0;/* later changed to -100% after box is checked*/
+        line-height: 3rem;/* later changed to -100% after box is checked*/
+    }
+    nav ul li a {
+        font-size: 2rem;
+    }
+    a:hover,a.active {
+        background: #fff;
+        color: #ffb900;
+        border-radius: 4rem;
+        transform: translate(3);
+        transition: all .8s;/* later changed to -100% after media query*/
+    }
+    #check__box:checked ~ ul {
+        left: 0;
+    }
+    
+}
+
+
+div.bgimg {
+    background-image: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    url(../images/bg-home.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    background-position: top;
+    background-attachment: fixed;
+}
+
